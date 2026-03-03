@@ -1,0 +1,31 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 2px;
+}
+.main-layout{
+    /* background-color: blue; */
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    border: 1px solid;
+}
+.header-layout{
+/* background-color: orange; */
+border-bottom: 1px solid ;
+
+}
+.body-layout{
+    /* background-color: yellow; */
+    display: flex;
+    flex-grow: 1;
+    gap: 45rem;
+    border-right:1px solid  ;
+
+}
+.sidemenu-layout{
+    width: 150px;
+    border: 1px solid;
+    
+}
