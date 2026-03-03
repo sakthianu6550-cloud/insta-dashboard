@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 type Props = {
   name: string;
@@ -8,6 +8,7 @@ type Props = {
 
 function Card({ name, count, setCount }: Props) {
 
+  // Smooth number animation
   const [displayCount, setDisplayCount] = useState(count);
 
   useEffect(() => {
@@ -15,7 +16,6 @@ function Card({ name, count, setCount }: Props) {
       setDisplayCount((prev) => {
         if (prev < count) return prev + 1;
         if (prev > count) return prev - 1;
-        clearInterval(interval);
         return prev;
       });
     }, 20);
@@ -28,8 +28,8 @@ function Card({ name, count, setCount }: Props) {
       <h2>{name}</h2>
       <p>{displayCount}</p>
 
-      <button onClick={() => setCount(count + 1)}>INCREASE</button>
-      <button onClick={() => setCount(count - 1)}>DECREASE</button>
+      <button className="inc-btn" onClick={() => setCount(count + 1)}>INCREASE</button>
+      <button className="dec-btn" onClick={() => setCount(count - 1)}>DECREASE</button>
     </div>
   );
 }

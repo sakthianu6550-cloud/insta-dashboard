@@ -1,32 +1,130 @@
-.layout {
-  text-align: center;
-  padding: 30px;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #feda75, #d62976, #962fbf, #4f5bd5);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.container {
-  margin-top: 20px;
+.layout {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+h1 {
+  margin-bottom: 10px;
 }
 
 .card {
-  background: white;
+  margin-top: 20px;
   padding: 20px;
-  border-radius: 10px;
-  width: 250px;
-  margin: auto;
+  border-radius: 15px;
+  background: #f9f9f9;
+}
+
+.card h2 {
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.card p {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
 button {
-  margin: 5px;
-  padding: 8px 12px;
+  @media (max-width: 500px) {.layout{
+    width: 90%;
+    padding: 25px;
+  }
+  }
+  margin: 8px 5px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.2s ease;
+
+}
+button:hover {
+  transform: translateY(-2px);
 }
 
-.toast {
+button:first-of-type {
+  background-color: linear-gradient(45deg, #4CAF50,#2ecc71);
+  color: white;
+}
+
+button:last-of-type {
+  background-color: linear-gradient(45deg, #ff6b6b,#ff4757);
+  color: white;
+}
+
+
+.layout{
+  animation: fadeIn 0.6s ease-in-out;
+}
+@keyframes fadeIn {
+  from{opacity: 0;
+    transform: translateY(20px);
+
+  }to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+.card{
+  transition: transform 0.2s ease,box-shadow 0.2s ease;
+}
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px
+  rgba(0,0,0,0.2);
+}
+.dark{
+  background: #1e1e1e;
+  color: white;
+}
+.dark .card{
+  background: #2c2c2c;
+}
+.toast{
   position: fixed;
   bottom: 20px;
-  right: 20px;
-  background: green;
+  background: black;
   color: white;
   padding: 10px 20px;
-  border-radius: 6px;
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.toggle-btn{
+  background: linear-gradient(45deg,#6a11cb,#2575fc);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.inc-btn{
+background: linear-gradient(45deg,#4CAF50,#2ecc71);
+color: white;
+}
+.dec-btn{
+background: linear-gradient(45deg,#ff6b6b,#ff4757);
+color: white;
+}
+.reset-btn{
+background: linear-gradient(45deg,#4CAF50,#2ecc71);
+color: white;
 }
